@@ -10,6 +10,10 @@
 
 
     // Buna Iubitul meu drag si scump heii trebuia sa spui iubita mea scumpa si draga si frumoasa
+
+
+
+    // ce face iubita mea?
   
 	<h1>Libraria mea</h1>
 	<?php
