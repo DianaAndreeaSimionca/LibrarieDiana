@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("connect_db.php");
 include("page_top.php");
 include("menu.php");
