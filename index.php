@@ -6,6 +6,7 @@
 </head>
 <body>
 
+    // al doilea init
   
 	<h1>Libraria mea</h1>
 	<?php
