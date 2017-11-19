@@ -16,6 +16,7 @@ include ("menu.php");
             <td><b>Total</b></td>
         </tr>
         <?php
+        $totalGeneral = 0;
         for ($i=0; $i<count($_SESSION['id_carte']); $i++)
         {
             if ($_SESSION['nr_buc'][$i] != 0)
@@ -25,7 +26,7 @@ include ("menu.php");
                             <td align="right">'.$_SESSION['pret'][$i].' lei</td>
                             <td align="right">'.($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]).' lei</td>
                        </tr>';
-                $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc']);
+                $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]);
             }
         }
         print '<tr>

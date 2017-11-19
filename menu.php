@@ -1,5 +1,5 @@
-<td valign="top" width="125">
-    <div style="width:120px; background-color:#F9F1E7; padding:4px; border: solid #632415 1px">
+<td valign="top" width="20%">
+    <div style="width: 96%; background-color:#F9F1E7; padding:4px; border: solid #632415 1px">
         <b>Alege domeniul</b><HR size="1">
 <?php
 $sql = "SELECT nume_domeniu FROM domenii ORDER BY nume_domeniu ASC";
@@ -13,15 +13,15 @@ while($row = mysqli_fetch_array($resursa))
 
 </div>
 <br>
-<div style="width:120px; background-color:#F9F1E7; padding:4px; border:solid #632415 1px">
+<div style="width:96%; background-color:#F9F1E7; padding:4px; border:solid #632415 1px">
 	<form action="search.php" method="GET">
 	<b>Cautare</b><br>
-        <input type="text" name="cuvant" size="12"><br>
-	<input type="submit" value="Cauta">
+    <input type="text" name="cuvant" size="12" width="100%"><br>
+	<input type="submit" value="Cauta" width="100%">
 	</form>
 </div>
-    <br>
-    <div style="width: 120px; background-color: #F9F1E7; padding: 4px; border: solid #632415 1px">
+<br>
+    <div style="width: 96%; background-color: #F9F1E7; padding: 4px; border: solid #632415 1px">
         <b>Cos</b><br>
 
         <?php

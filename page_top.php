@@ -33,5 +33,5 @@
 
 <body bgcolor="#ffffff">
 <img src="logo.png" width="100%">
-<table>
+<table width="100%">
     <tr>

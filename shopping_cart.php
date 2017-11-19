@@ -23,7 +23,7 @@ if (isset($_GET['actiune']) && $_GET['actiune'] == "modifica")
 
 <td valign="top">
     <h1>Cosul de cumparaturi</h1>
-    <td action="cos.php?actiune=modifica" method="post">
+    <form action="cos.php?actiune=modifica" method="post">
         <table border="1" cellpadding="4" cellspacing="0">
             <tr bgcolor="#F9F1E7">
                 <td><b>Numar bucati</b></td>
@@ -62,7 +62,7 @@ if (isset($_GET['actiune']) && $_GET['actiune'] == "modifica")
                 </td>
             </tr>
         </table>
-    </td>
+    </form>
     <?php
     include ("page_bottom.php");
     ?>
