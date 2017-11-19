@@ -5,23 +5,11 @@
 	<title>Libraria mea</title>
 </head>
 <body>
-
-    // al doilea init
-
-
-    // Buna Iubitul meu drag si scump heii trebuia sa spui iubita mea scumpa si draga si frumoasa
-
-
-
-    // ce face iubita mea?
-
-
-
-    // bine iubitule
   
 	<h1>Libraria mea</h1>
 	<?php
-	$db = mysqli_connect("localhost", "root", "Porsche1996");
+
+	$db = mysqli_connect("127.0.0.1", "root", "Porsche1996");
 	mysqli_select_db($db,"librarie");
 	$sql1 = "Select * from carti";
 	$resursa1 = mysqli_query($db, $sql1);
