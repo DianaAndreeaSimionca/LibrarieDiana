@@ -12,6 +12,10 @@ CREATE TABLE carti (
 `pret` DOUBLE NOT NULL ,
 PRIMARY KEY (`id_carte`), UNIQUE (`id_carte`), INDEX (`id_carte`)) ENGINE = InnoDB;
 
+INSERT INTO carti(id_autor, id_domeniu, titlu, descriere, data, pret) VALUES (1, 2, 'Luceafarul', 'Descriere Luceafarul', '2012-12-10', 30.5);
+INSERT INTO carti(id_autor, id_domeniu, titlu, descriere, data, pret) VALUES (2, 3, 'Morometii', 'Descriere Morometii', '2010-06-05', 50.0);
+INSERT INTO carti(id_autor, id_domeniu, titlu, descriere, data, pret) VALUES (4, 4, 'Romea si Julieta', 'Descriere Romea si Julieta', '2014-10-01', 20.0);
+
 CREATE TABLE domenii (
 `id_domeniu` INT NOT NULL AUTO_INCREMENT ,
 `nume_domeniu` TEXT NOT NULL ,

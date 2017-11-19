@@ -4,7 +4,7 @@ include ("page_top.php");
 include ("menu.php");
 
 $id_carte = $_GET['id_carte'];
-$sql = "SELECT titlu, nume_autor, descriere, pret, carti.id, autori.id, carti.id_autor FROM carti, autori WHERE carti.id = ".$id_carte." AND carti.id_autor = autori.id";
+$sql = "SELECT * FROM carti, autori WHERE carti.id_carte = ".$id_carte." AND carti.id_autor = autori.id_autor";
 $resursa = mysqli_query($db, $sql);
 $row = mysqli_fetch_array($resursa);
 ?>
