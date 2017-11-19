@@ -38,6 +38,14 @@ $row = mysqli_fetch_array($resursa);
             </td>
         </tr>
     </table>
+    <form action="shopping_cart.php?actiune=adauga" method="post">
+        <input type="hidden" name="id_carte" value="<?=$id_carte?>">
+        <input type="hidden" name="titlu" value="<?=$rowCarte['titlu']?>">
+        <input type="hidden" name="nume_autor" value="<?=$rowCarte['nume_autor']?>">
+        <input type="hidden" name="pret" value="<?=$rowCarte['pret']?>">
+        <input type="submit" value="Cumpara acum!">
+    </form>
+
     <p><b>Opiniile cititorilor</b></p>
 <?php
 $sqlComentarii = "SELECT comentarii.comentariu,nume_utilizator FROM comentarii WHERE id_carte = ".$id_carte;
