@@ -7,6 +7,9 @@
 <body>
 
     // al doilea init
+
+
+    // Buna Iubitul meu drag si scump heii trebuia sa spui iubita mea scumpa si draga si frumoasa
   
 	<h1>Libraria mea</h1>
 	<?php
