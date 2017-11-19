@@ -74,8 +74,34 @@ for($i=0; $i<count($_SESSION['ID_CARTE']); $i++)
         {
             print '<tr>
                         <td><input type="text" name="noulNrBuc['.$i.']" size="1" value="'.$_SESSION['nr_buc'][$i].'"></td>
-    <td><b>'.$_SESSION['titlu'][$i].'</b>de''</td>
+                        <td><b>'.$_SESSION['titlu'][$i].'</b>de'.$_SESSION['nume_autor'][$i].'</td>
+                        <td align="right">'.$_SESSION['pret'][$i].' lei</td>
+                        <td align="right">'.($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]).' lei</td>
                     </tr>';
+            $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i])
         }
 }
+
+<br>
+
+<div style="width: 120px; background-color: #F9F1E7; padding: 4px; border: solid #632415 1px">
+    <b>Cos</b><br>
+
+<?php
+$nrCarti = 0;
+$totalValoare = 0;
+
+for ($i=0; $i<count($_SESSION['titlu']); $i++)
+{
+    $nrCarti = $nrCarti + $_SESSION['nr_buc'][$i];
+    $totalValoare = $totalValoare + ($_SESSION['nr_buc'][$i] * $_SESSION['pret'][$i]);
+}
+?>
+
+Aveti <b><?=$nrCarti?></b> carti in cos, in valoare totala de <b><?=$totalValoare?></b> lei.
+    <a href="shopping_cart.php">Click aici pentru a vedea continutul cosului!</a>
+</div>
+
+
+
 
