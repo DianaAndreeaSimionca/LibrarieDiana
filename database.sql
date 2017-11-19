@@ -4,10 +4,22 @@ USE librarie;
 
 CREATE TABLE carti (
 `id` INT NOT NULL AUTO_INCREMENT ,
-`id_autor` SMALLINT NOT NULL ,
+`id_autor` INT NOT NULL ,
+`id_domeniu` INT NOT NULL ,
 `titlu` TEXT NOT NULL ,
 `descriere` TEXT NOT NULL ,
+`data` DATE NOT NULL ,
+`pret` DOUBLE NOT NULL ,
 PRIMARY KEY (`id`), UNIQUE (`id`), INDEX (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE domenii (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`nume_domeniu` INT NOT NULL ,
+PRIMARY KEY (`id`), UNIQUE (`id`), INDEX (`id`)) ENGINE = InnoDB;
+
+INSERT INTO domenii(nume_domeniu) VALUES ('Poezie');
+INSERT INTO domenii(nume_domeniu) VALUES ('Roman');
+INSERT INTO domenii(nume_domeniu) VALUES ('Proza');
 
 CREATE TABLE autori (
 `id` INT NOT NULL AUTO_INCREMENT ,

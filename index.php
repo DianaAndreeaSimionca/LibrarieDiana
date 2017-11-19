@@ -5,10 +5,10 @@
 	<title>Libraria mea</title>
 </head>
 <body>
-  
-	<h1>Libraria mea</h1>
-	<?php
 
+	<h1>Libraria mea</h1>
+
+	<?php
 	$db = mysqli_connect("127.0.0.1", "root", "Porsche1996");
 	mysqli_select_db($db,"librarie");
 	$sql1 = "Select * from carti";
@@ -21,13 +21,12 @@
 
 	<?php
 	/* si in continuare afisam numele de domenii: */
-	/*$sql2 = "select nume_domeniu FROM domenii";
-	$resursa2 = mysql_query($sql2);
-	while($row = mysql_fetch_array($resursa2))
+	$sql2 = "select nume_domeniu FROM domenii";
+	$resursa2 = mysqli_query($db, $sql2);
+	while($row = mysqli_fetch_array($resursa2))
 	{
-		print $row['nume_domeniu']."<br>";
 		print '<a href="domeniu.php?nume_domeniu='.$row['nume_domeniu'].'">'.$row['nume_domeniu'].'</a></br>';
-	}*/
+	}
 	?>
 
 </body>
