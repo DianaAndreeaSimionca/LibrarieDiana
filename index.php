@@ -34,10 +34,35 @@ include ("meniu.php");
         <tr>
 <?php
 $sqlVanzari = "SELECT id_carte,sum(nr_buc) AS bucatiVandute FROM vanzari GROUP BY id_carte ORDER BY bucatiVandute DESC LIMIT 0,3";
-$resursaVanzari = mysqli_query($sqlVanzari);
+$resursaVanzari = mysqli_query($db ,$sqlVanzari);
 while($rowVanzari = mysqli_fetch_array($resursaVanzari))
 {
     $sqlCarte = "SELECT titlu,nume_autor,pret FROM carti,autori WHERE carti.id_autor=autori.id_autor AND id_carte=".$rowVanzari['id_carte'];
-    $resursaCarte = mysqli_query($sqlCarte);
+    $resursaCarte = mysqli_query($db ,$sqlCarte);
+
+    while($rowCarte = mysqli_fetch_array($resursaCarte))
+    {
+        print '<td align = "center">';
+        $adresaImagine = "coperte/".$rowVanzari['id_carte'].".jpg";
+        if(file_exists($adresaImagine))
+        {
+            print '<img src = "'.$adresaImagine.'" width="75" height="100"><br>';
+        }
+        else
+        {
+            print '<div style="width: 75px; height: 110px; border: 1px black solid; baclground-color:#cccccc">Fara imagine</div>div>';
+        }
+        print '<b><a href = "carte.php?id_carte = '.$rowVanzari['id_carte'].'">'.$rowCarte['titlu'].'</a></b><br> de <i>'.$rowCarte['nume_autor'].'</i><br>Pret: '.$rowCarte['pret'].' lei </td>';
+    }
 }
 ?>
+        </tr>
+    </table>
+    </td>
+</tr>
+</table>
+
+<?php
+include("page_bottom.php");
+?>
+

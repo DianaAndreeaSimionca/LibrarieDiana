@@ -6,7 +6,7 @@ $sql = "SELECT * FROM domenii ORDER BY nume_domeniu ASC";
 $resursa = mysqli_query($sql);
 while($row = mysqli_fetch_array($resursa))
 {
-    print '<a href="domeniu.php?id_domeniu="'.$row['id_domeniu'].'>'.$row['nume_domeniu'].'</a><br>';
+    print 'a href="domeniu.php?id_domeniu='.$row['id_domeniu'].'">'.$row['nume_domeniu'].'</a><br>';
 }
 
 ?>
