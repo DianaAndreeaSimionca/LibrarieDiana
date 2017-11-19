@@ -32,6 +32,6 @@
 </head>
 
 <body bgcolor="#ffffff">
-<img src="logo.png">
+<img src="logo.png" width="100%">
 <table>
     <tr>

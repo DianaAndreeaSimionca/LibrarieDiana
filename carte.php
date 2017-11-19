@@ -4,12 +4,12 @@ include ("page_top.php");
 include ("menu.php");
 
 $id_carte = $_GET['id_carte'];
-$sql = "SELECT titlu, nume_autor, descriere, pret FROM carti, autori WHERE id_carte = ".$id_carte."AND carti.id_autor = autori.id_autor";
+$sql = "SELECT titlu, nume_autor, descriere, pret, carti.id, autori.id, carti.id_autor FROM carti, autori WHERE carti.id = ".$id_carte." AND carti.id_autor = autori.id";
 $resursa = mysqli_query($db, $sql);
 $row = mysqli_fetch_array($resursa);
 ?>
 
-< valign="top">
+<td valign="top">
     <table>
         <tr>
             <td valign="top">
@@ -18,6 +18,10 @@ $row = mysqli_fetch_array($resursa);
                 if(file_exists($adresaImagine))
                 {
                     print '<img src = "'.$adresaImagine.'" width="75" height="100" hspace="10"><br>';
+                }
+                else
+                {
+                    print '<div style="width: 75px; height: 100px; border: 1px black solid; background-color: #cccccc">Fara imagine</div>';
                 }
                 ?>
             </td>
