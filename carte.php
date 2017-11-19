@@ -35,8 +35,8 @@ $row = mysqli_fetch_array($resursa);
     </table>
     <p><b>Opiniile cititorilor</b></p>
 <?php
-$sqlComentarii = "SELECT * FROM comentarii WHERE id_carte = ".$id_carte;
-$resursaComentarii = mysqli_query($sqlComentarii);
+$sqlComentarii = "SELECT comentarii.comentariu,nume_utilizator FROM comentarii WHERE id_carte = ".$id_carte;
+$resursaComentarii = mysqli_query($db ,$sqlComentarii);
 while ($row = mysqli_fetch_array($resursaComentarii))
 {
     print '<div style="width: 400px; border: 1px solid #ffffff; background-color: #F9F1E7; padding: 5px;"><a href = "mailto:'.$row['adresa_email'].'">'.$row['nume_utilizator'].'</a><br>'.$row['comentariu'].'</div>';
