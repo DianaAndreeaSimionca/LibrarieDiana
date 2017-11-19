@@ -20,4 +20,22 @@ while($row = mysqli_fetch_array($resursa))
 	<input type="submit" value="Cauta">
 	</form>
 </div>
+    <br>
+    <div style="width: 120px; background-color: #F9F1E7; padding: 4px; border: solid #632415 1px">
+        <b>Cos</b><br>
+
+        <?php
+        $nrCarti = 0;
+        $totalValoare = 0;
+
+        for ($i=0; $i<count($_SESSION['titlu']); $i++)
+        {
+            $nrCarti = $nrCarti + $_SESSION['nr_buc'][$i];
+            $totalValoare = $totalValoare + ($_SESSION['nr_buc'][$i] * $_SESSION['pret'][$i]);
+        }
+        ?>
+
+        Aveti <b><?=$nrCarti?></b> carti in cos, in valoare totala de <b><?=$totalValoare?></b> lei.
+        <a href="shopping_cart.php">Click aici pentru a vedea continutul cosului!</a>
+    </div>
 </td>

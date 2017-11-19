@@ -4,8 +4,6 @@ include ("connect_db.php");
 include ("page_top.php");
 include ("menu.php");
 
-$actiune = $_GET['actiune'];
-
 if(isset($_GET['actiune']) && $_GET['actiune'] == "adauga")
 {
     $_SESSION['id_carte'][] = $_POST['id_carte'];
@@ -34,12 +32,13 @@ if (isset($_GET['actiune']) && $_GET['actiune'] == "modifica")
                 <td><b>Total</b></td>
             </tr>
             <?php
+            $totalGeneral = 0;
             for ($i=0;$i<count($_SESSION['id_carte']);$i++)
             {
                 print '<tr><td><input type="text" name="noulNrBuc['.$i.']" size="1" value="'.$_SESSION['nr_buc'][$i].'"></td>
                            <td><b>'.$_SESSION['titlu'][$i].'</b>de '.$_SESSION['nume_autor'][$i].'</td>
                            <td align="right">'.$_SESSION['pret'][$i].' lei</td>
-                           <td align="right">'.($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]).' lei</td>
+                           <td align="right">'.($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]). ' lei</td>
                            </tr>';
                 $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]);
             }
@@ -68,39 +67,7 @@ if (isset($_GET['actiune']) && $_GET['actiune'] == "modifica")
     include ("page_bottom.php");
     ?>
 
-for($i=0; $i<count($_SESSION['ID_CARTE']); $i++)
-{
-    if($_SESSION['nr_buc'][$i] != 0)
-        {
-            print '<tr>
-                        <td><input type="text" name="noulNrBuc['.$i.']" size="1" value="'.$_SESSION['nr_buc'][$i].'"></td>
-                        <td><b>'.$_SESSION['titlu'][$i].'</b>de'.$_SESSION['nume_autor'][$i].'</td>
-                        <td align="right">'.$_SESSION['pret'][$i].' lei</td>
-                        <td align="right">'.($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]).' lei</td>
-                    </tr>';
-            $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i])
-        }
-}
-
 <br>
-
-<div style="width: 120px; background-color: #F9F1E7; padding: 4px; border: solid #632415 1px">
-    <b>Cos</b><br>
-
-<?php
-$nrCarti = 0;
-$totalValoare = 0;
-
-for ($i=0; $i<count($_SESSION['titlu']); $i++)
-{
-    $nrCarti = $nrCarti + $_SESSION['nr_buc'][$i];
-    $totalValoare = $totalValoare + ($_SESSION['nr_buc'][$i] * $_SESSION['pret'][$i]);
-}
-?>
-
-Aveti <b><?=$nrCarti?></b> carti in cos, in valoare totala de <b><?=$totalValoare?></b> lei.
-    <a href="shopping_cart.php">Click aici pentru a vedea continutul cosului!</a>
-</div>
 
 
 
