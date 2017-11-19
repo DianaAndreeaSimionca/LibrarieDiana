@@ -1,7 +1,7 @@
 <?php
-include ("conectare.php");
+include ("connect_db.php");
 include ("page_top.php");
-include ("meniu.php");
+include ("menu.php");
 ?>
 
     <td valign="top">
@@ -50,7 +50,7 @@ while($rowVanzari = mysqli_fetch_array($resursaVanzari))
         }
         else
         {
-            print '<div style="width: 75px; height: 110px; border: 1px black solid; baclground-color:#cccccc">Fara imagine</div>div>';
+            print '<div style="width: 75px; height: 110px; border: 1px black solid; background-color:#cccccc">Fara imagine</div>div>';
         }
         print '<b><a href = "carte.php?id_carte = '.$rowVanzari['id_carte'].'">'.$rowCarte['titlu'].'</a></b><br> de <i>'.$rowCarte['nume_autor'].'</i><br>Pret: '.$rowCarte['pret'].' lei </td>';
     }
