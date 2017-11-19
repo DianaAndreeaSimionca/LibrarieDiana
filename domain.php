@@ -14,7 +14,7 @@ $numeDomeniu = $_GET['nume_domeniu'];
     </b>
     <table cellpadding="5">
         <?php
-            $sql = "select * FROM carti AS c, autori AS a, domenii AS d WHERE c.id_domeniu=d.id AND c.id_autor=a.id AND d.nume_domeniu='".$numeDomeniu."'";
+            $sql = "select * FROM carti, autori, domenii WHERE carti.id_domeniu=domenii.id_domeniu AND carti.id_autor=autori.id_autor AND domenii.nume_domeniu='".$numeDomeniu."'";
             $resursa = mysqli_query($db, $sql);
             while($row = mysqli_fetch_array($resursa))
             {
@@ -23,7 +23,7 @@ $numeDomeniu = $_GET['nume_domeniu'];
                     <td align="center">
 
                         <?php
-                        $adresaImagine = "coperta".$row['id'].".jpg";
+                        $adresaImagine = "coperta".$row['id_carte'].".jpg";
                         if(file_exists($adresaImagine))
                         {
                             print '<img src="'.$adresaImagine.'" width="75" height="100"><br>';
@@ -36,7 +36,7 @@ $numeDomeniu = $_GET['nume_domeniu'];
                     </td>
                     <td>
                         <b>
-                            <a href="carte.php?id_carte=<?php print $row['id']?>"><?php print $row['titlu'] ?></a>
+                            <a href="carte.php?id_carte=<?php print $row['id_carte']?>"><?php print $row['titlu'] ?></a>
                         </b>
                         <br><i>de <?php print $row['nume_autor'] ?></i>
                         <br>Pret: <?php print $row['pret'] ?> lei
