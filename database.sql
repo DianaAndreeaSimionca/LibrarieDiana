@@ -50,3 +50,10 @@ CREATE TABLE vanzari(
   `id_tranzactie` INT NOT NULL ,
   `id_carte` INT NOT NULL ,
   `nr_buc` INT NOT NULL ) ENGINE  = InnoDB;
+
+CREATE TABLE admin(
+  `id_admin` INT NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE ,
+  `admin_nume` TEXT NOT NULL ,
+  `admin_parola` TEXT NOT NULL ) ENGINE  = InnoDB;
+
+INSERT INTO admin(admin_nume, admin_parola) VALUES  ('Admin',  md5('admin'));

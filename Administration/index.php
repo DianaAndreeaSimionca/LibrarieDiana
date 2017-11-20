@@ -27,7 +27,7 @@
 </head>
 
 <body bgcolor="#ffffff">
-<img src="LibrarieDiana\logo.png">
+<img src="../logo.png">
 <h1>Autentificare</h1>
 <form action="login.php" method="post">
     <table>
