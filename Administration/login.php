@@ -9,7 +9,7 @@ if ($_POST['nume'] == "" || $_POST['parola'] == "")
 include ("../connect_db.php");
 
 $parolaEncriptata = md5($_POST['parola']);
-$sql = "SELECT * FROM admin WHERE admin_nume= '".$_POST['nume']."' AND admin_parola = '".$parolaEncriptata."'";
+$sql = "SELECT * FROM admin WHERE admin_nume='".$_POST['nume']."' AND admin_parola='".$parolaEncriptata."'";
 $resursa = mysqli_query($db, $sql);
 
 if (mysqli_num_rows($resursa) != 1)
