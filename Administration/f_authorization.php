@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include ("../connect_db.php");
 
 function autorizat($db)
