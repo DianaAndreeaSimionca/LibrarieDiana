@@ -2,7 +2,7 @@
 session_start();
 include ("../connect_db.php");
 
-function autorizat()
+function autorizat($db)
 {
     $sql = "SELECT * FROM admin WHERE admin_nume='".$_SESSION['nume_admin']."' AND admin_parola='".$_SESSION['parola_encriptata']."'";
     $resursa = mysqli_query($db, $sql);
@@ -15,4 +15,5 @@ function autorizat()
         return true;
     }
 }
+
 ?>
