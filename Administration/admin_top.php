@@ -28,23 +28,15 @@
 
 <body bgcolor="#ffffff">
 <img src="../logo.png" width="100%">
-<h1>Autentificare</h1>
-<form action="login.php" method="post">
-    <table>
-        <tr>
-            <td align="right">Nume:</td>
-            <td><input type="text" name="nume"></td>
-        </tr>
-        <tr>
-            <td align="right">Parola:</td>
-            <td><input type="password" name="parola"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Autentificare"></td>
-        </tr>
-    </table>
-</form>
+<table bgcolor="#F9F1E7" cellspacing="0" cellpadding="4" border="1">
+    <tr>
+        <td><a href="add.php">Adauga</a></td>
+        <td><a href="modify_delete.php">Modifica sau Sterge</a></td>
+        <td><a href="opinions.php">Opinii vizitatori</a></td>
+        <td><a href="orders.php">Comenzi</a></td>
+    </tr>
+</table>
+<br>
 </body>
 
 </html>
