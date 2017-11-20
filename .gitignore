@@ -1,3 +1,6 @@
+# Connection to database
+connect_db.php
+
 # Compiled class file
 *.class
 
