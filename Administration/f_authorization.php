@@ -17,6 +17,4 @@ function autorizat($db)
     }
 }
 
-// change in here
-
 ?>
