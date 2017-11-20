@@ -10,8 +10,7 @@ $cuvant = $_GET['cuvant'];
 <td valign="top">
     <h1>Rezultatele cautarii</h1>
     <p>Textul cautat: <b><?=$cuvant?></b></p>
-    <b>Autori</b>
-    <blackquote>
+    <b>Autori: </b>
         <?php
         $sql = "SELECT id_autor, nume_autor FROM autori WHERE nume_autor LIKE '%".$cuvant."%'";
         $resursa = mysqli_query($db, $sql);
@@ -21,18 +20,17 @@ $cuvant = $_GET['cuvant'];
             print "<i>Nici un rezultat</i>";
         }
         else
+            print "<br>";
             while ($row = mysqli_fetch_array($resursa))
             {
                 print '<a href="autor.php?id_autor='.$row['id_autor'].'">'.$row['nume_autor'].'</a><br>';
             }
         ?>
-
-    </blackquote>
-    <b>Titluri</b>
-    <blackquote>
+    <br><br>
+    <b>Titluri:</b>
 
     <?php
-    $sql = "SELECT id_carte, titlu FROM carti WHERE titlu LIKE '%".$cuvant."%'";
+    $sql = "SELECT id_carte, titlu, descriere FROM carti WHERE titlu LIKE '%".$cuvant."%'";
     $resursa = mysqli_query($db, $sql);
 
     if (mysqli_num_rows($resursa) == 0)
@@ -40,13 +38,14 @@ $cuvant = $_GET['cuvant'];
         print "<i>Nici un rezultat</i>";
     }
     else
+        print "<br>";
         while ($row = mysqli_fetch_array($resursa))
         {
             print '<a href="carte.php?id_carte='.$row['id_carte'].'">'.$row['titlu'].'</a><br>'.$row['descriere'].'<br><br>';
         }
     ?>
 
-    </blackquote>
+    <br>
 </td>
 
 <?php
