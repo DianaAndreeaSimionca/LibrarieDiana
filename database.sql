@@ -57,3 +57,5 @@ CREATE TABLE admin(
   `admin_parola` TEXT NOT NULL ) ENGINE  = InnoDB;
 
 INSERT INTO admin(admin_nume, admin_parola) VALUES  ('Admin',  md5('admin'));
+
+ALTER TABLE  carti CHANGE data data TIMESTAMP(6) NOT NULL ;
