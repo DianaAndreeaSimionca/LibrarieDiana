@@ -28,10 +28,11 @@ while($row = mysqli_fetch_array($resursa))
         $nrCarti = 0;
         $totalValoare = 0;
 
-        for ($i=0; $i<count($_SESSION['titlu']); $i++)
-        {
-            $nrCarti = $nrCarti + $_SESSION['nr_buc'][$i];
-            $totalValoare = $totalValoare + ($_SESSION['nr_buc'][$i] * $_SESSION['pret'][$i]);
+        if(isset($_SESSION['titlu']) == true) {
+            for ($i = 0; $i < count($_SESSION['titlu']); $i++) {
+                $nrCarti = $nrCarti + $_SESSION['nr_buc'][$i];
+                $totalValoare = $totalValoare + ($_SESSION['nr_buc'][$i] * $_SESSION['pret'][$i]);
+            }
         }
         ?>
 

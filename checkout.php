@@ -36,7 +36,7 @@ include ("menu.php");
         ?>
     </table>
     <h1>Detalii</h1>
-    <form action="modify.php" method="post">
+    <form action="finish_command.php" method="post">
         <table>
             <tr>
                 <td><b>Numele:</b></td>

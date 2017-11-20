@@ -27,7 +27,7 @@ include ("menu.php");
                 {
                     print '<div style="width: 75px; height: 100px; border: 1px black solid; background-color: #cccccc">Fara Imagine</div>';
                 }
-                print '<b><a href="carte.php?id_carte='.$row['id_carte'].'">'.$row['titlu'].'</a></b><br> de <i>'.$row['nume_autor'].'</i><br> Pret: '.$row['pret'].'lei</td>';
+                print '<b><a href="carte.php?id_carte='.$row['id_carte'].'">'.$row['titlu'].'</a></b><br> de <i>'.$row['nume_autor'].'</i><br>Pret: '.$row['pret'].' lei</td>';
             }
             ?>
         </tr>
@@ -41,11 +41,10 @@ $sqlVanzari = "SELECT carti.id_carte, sum(nr_buc) AS bucatiVandute FROM vanzari,
 $resursaVanzari = mysqli_query($db ,$sqlVanzari);
 while($rowVanzari = mysqli_fetch_array($resursaVanzari))
 {
-    $sqlCarte = "SELECT titlu, nume_autor, pret FROM carti, autori WHERE carti.id_autor=autori.id AND id=".$rowVanzari['id'];
+    $sqlCarte = "SELECT * FROM carti, autori WHERE carti.id_autor=autori.id_autor AND carti.id_carte=".$rowVanzari['id_carte'];
     $resursaCarte = mysqli_query($db ,$sqlCarte);
     while($rowCarte = mysqli_fetch_array($resursaCarte))
     {
-        print "Am gasit ceva?";
 
         print '<td align = "center">';
         $adresaImagine = "coperte/".$rowVanzari['id_carte'].".jpg";
@@ -55,9 +54,9 @@ while($rowVanzari = mysqli_fetch_array($resursaVanzari))
         }
         else
         {
-            print '<div style="width: 75px; height: 110px; border: 1px black solid; background-color:#cccccc">Fara imagine</div>div>';
+            print '<div style="width: 75px; height: 110px; border: 1px black solid; background-color:#cccccc">Fara imagine</div>';
         }
-        print '<b><a href = "carte.php?id_carte = '.$rowVanzari['id_carte'].'">'.$rowCarte['titlu'].'</a></b><br> de <i>'.$rowCarte['nume_autor'].'</i><br>Pret: '.$rowCarte['pret'].' lei </td>';
+        print '<b><a href="carte.php?id_carte='.$rowVanzari['id_carte'].'">'.$rowCarte['titlu'].'</a></b><br> de <i>'.$rowCarte['nume_autor'].'</i><br>Pret: '.$rowCarte['pret'].' lei </td>';
     }
 }
 ?>

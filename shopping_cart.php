@@ -33,14 +33,18 @@ if (isset($_GET['actiune']) && $_GET['actiune'] == "modifica")
             </tr>
             <?php
             $totalGeneral = 0;
-            for ($i=0;$i<count($_SESSION['id_carte']);$i++)
+
+            if(isset($_SESSION['id_carte']) == true)
             {
-                print '<tr><td><input type="text" name="noulNrBuc['.$i.']" size="1" value="'.$_SESSION['nr_buc'][$i].'"></td>
+                for ($i=0;$i<count($_SESSION['id_carte']);$i++)
+                {
+                    print '<tr><td><input type="text" name="noulNrBuc['.$i.']" size="1" value="'.$_SESSION['nr_buc'][$i].'"></td>
                            <td><b>'.$_SESSION['titlu'][$i].'</b>de '.$_SESSION['nume_autor'][$i].'</td>
                            <td align="right">'.$_SESSION['pret'][$i].' lei</td>
                            <td align="right">'.($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]). ' lei</td>
                            </tr>';
-                $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]);
+                    $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]);
+                }
             }
             print '<tr><td align="right" colspan="3"><b>Total in cos</b></td>
                        <td align="right"><b>'.$totalGeneral.'</b> lei</td> 

@@ -25,15 +25,15 @@ include ("connect_db.php");
 $sqlTranzactie = "INSERT INTO tranzactii (nume_cumparator, adresa_cumparator) VALUES('".$_POST['nume']."','".$_POST['adresa']."')";
 $resursaTranzactie = mysqli_query($db, $sqlTranzactie);
 
-$id_tranzactie = mysqli_insert_id();
+$id_tranzactie = mysqli_insert_id($db);
 
 for ($i=0; $i<count($_SESSION['id_carte']); $i++)
 {
     if ($_SESSION['nr_buc'][$i] > 0)
     {
-        $sqlVanzare = "INSERT INTO vanzari VALUES ('".$id_tranzactie."','".$_SESSION['id_carte'][$i]."','".$_SESSION['nr_buc'][$i]."')";
+        $sqlVanzare = "INSERT INTO vanzari(id_tranzactie, id_carte, nr_buc) VALUES (".$id_tranzactie.", ".$_SESSION['id_carte'][$i].", ".$_SESSION['nr_buc'][$i].")";
 
-        mysqli_query($sqlTranzactie);
+        mysqli_query($db, $sqlVanzare);
     }
 }
 
@@ -45,6 +45,8 @@ $mesaj = "O noua comanda de la <b>".$_POST['nume']."</b><br>";
 $mesaj .= "Adresa:".$_POST['adresa']."<br>";
 $mesaj .= "Cartile comandate: <br><br>";
 $mesaj .="<table border='1' cellspacing='0' cellpadding='4'>";
+
+$totalGeneral = 0;
 
 for ($i=0; $i<count($_SESSION['id_carte']); $i++)
 {
