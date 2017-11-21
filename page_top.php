@@ -7,21 +7,20 @@
 
     <style type="text/css">
 
-        body,p,td
-        {
-            font-family: Verdana,Arial,sans-serif;
-            font-size:12px;
+        body, p, td {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 12px;
         }
-        h1
-        {
+
+        h1 {
             font-family: Times New Roman, Times, serif;
-            font-size:18px;
+            font-size: 18px;
             font-weight: bold;
             color: #336699;
             font-style: italic;
         }
-        .titlu
-        {
+
+        .titlu {
             font-family: Verdana, Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;

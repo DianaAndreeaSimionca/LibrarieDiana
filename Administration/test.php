@@ -1,12 +1,12 @@
 <?php
-include ("f_authorization.php");
+    include("f_authorization.php");
 
-if(!autorizat($db))
-{
-    print 'Acces neautorizat!';
-    exit;
-}
+    if (!autorizat($db))
+    {
+        print 'Acces neautorizat!';
+        exit;
+    }
 
-include ("menu.php");
-include ("main.php");
+    include("menu.php");
+    include("main.php");
 ?>

@@ -1,6 +1,6 @@
 <?php
-include ("authorization.php");
-include ("admin_top.php");
+    include("authorization.php");
+    include("admin_top.php");
 ?>
 
 <h1>Adaugare</h1>
@@ -24,12 +24,12 @@ include ("admin_top.php");
             <td>
                 <select name="id_domeniu">
                     <?php
-                    $sql = "SELECT * FROM domenii ORDER BY nume_domeniu ASC";
-                    $resursa = mysqli_query($db ,$sql);
-                    while ($row = mysqli_fetch_array($resursa))
-                    {
-                        print '<option value="'.$row['id_domeniu'].'">'.$row['nume_domeniu'].'</option>';
-                    }
+                        $sql     = "SELECT * FROM domenii ORDER BY nume_domeniu ASC";
+                        $resursa = mysqli_query($db, $sql);
+                        while ($row = mysqli_fetch_array($resursa))
+                        {
+                            print '<option value="' . $row['id_domeniu'] . '">' . $row['nume_domeniu'] . '</option>';
+                        }
                     ?>
                 </select>
             </td>
@@ -39,12 +39,12 @@ include ("admin_top.php");
             <td>
                 <select name="id_autor">
                     <?php
-                    $sql = "SELECT * FROM autori ORDER BY nume_autor ASC";
-                    $resursa = mysqli_query($db ,$sql);
-                    while ($row = mysqli_fetch_array($resursa))
-                    {
-                        print '<option value="'.$row['id_autor'].'">'.$row['nume_autor'].'</option>';
-                    }
+                        $sql     = "SELECT * FROM autori ORDER BY nume_autor ASC";
+                        $resursa = mysqli_query($db, $sql);
+                        while ($row = mysqli_fetch_array($resursa))
+                        {
+                            print '<option value="' . $row['id_autor'] . '">' . $row['nume_autor'] . '</option>';
+                        }
                     ?>
                 </select>
             </td>

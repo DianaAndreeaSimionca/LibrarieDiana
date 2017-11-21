@@ -3,21 +3,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
     <title>Libraria mea</title>
     <style type="text/css">
-        body, p, td
-        {
+        body, p, td {
             font-family: Verdana, Arial, sans-serif;
             font-size: 12px;
         }
-        h1
-        {
+
+        h1 {
             font-family: Times New Roman, Times, serif;
             font-size: 18px;
             font-weight: bold;
             color: #336699;
             font-style: italic;
         }
-        .titlu
-        {
+
+        .titlu {
             font-family: Verdana, Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;

@@ -1,6 +1,6 @@
 <?php
-include ("authorization.php");
-include ("admin_top.php");
+    include("authorization.php");
+    include("admin_top.php");
 
-print "Aceasta este prima mea pagina";
+    print "Aceasta este prima mea pagina";
 ?>

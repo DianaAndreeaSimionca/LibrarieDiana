@@ -1,5 +1,5 @@
 if(!autorizat($db))
 {
-    print 'Acces neautorizat!';
-    exit;
+print 'Acces neautorizat!';
+exit;
 }
