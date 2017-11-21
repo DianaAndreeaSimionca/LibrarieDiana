@@ -173,7 +173,6 @@ if(isset($_POST['modifica_carte']))
     <input type="submit" name="modifica_carte" value="Modifica">
 </form>
 <?php
-}
     }
     if (isset($_POST['sterge_carte']))
     {
