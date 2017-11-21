@@ -51,12 +51,11 @@ include ("admin_top.php");
             <td>
                 <select name="id_autor">
                     <?php
-                    $sql = "SELECT * FROM autori ORDER BY nume_autor ASC ";
+                    $sql = "SELECT * FROM autori ORDER BY  nume_autor ASC ";
                     $resursa = mysqli_query($db, $sql);
-                    while (mysqli_fetch_array($resursa))
+                    while ($row = mysqli_fetch_array($resursa))
                     {
                         print '<option value="'.$row['id_autor'].'">'.$row['nume_autor'].'</option>';
-
                     }
                     ?>
                 </select>
