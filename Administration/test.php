@@ -1,7 +1,7 @@
 <?php
 include ("f_authorization.php");
 
-if(!autorizat())
+if(!autorizat($db))
 {
     print 'Acces neautorizat!';
     exit;
