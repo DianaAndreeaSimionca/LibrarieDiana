@@ -78,3 +78,5 @@ INSERT INTO admin (admin_nume, admin_parola) VALUES ('Admin', md5('admin'));
 ALTER TABLE carti CHANGE data data TIMESTAMP(6) NOT NULL;
 
 ALTER TABLE admin ADD ulimul_comentariu_moderat INT UNSIGNED DEFAULT  "0" NOT NULL ;
+
+ALTER TABLE tranzactii ADD comanda_onorata TINYINT UNSIGNED DEFAULT "0" NOT NULL ;
