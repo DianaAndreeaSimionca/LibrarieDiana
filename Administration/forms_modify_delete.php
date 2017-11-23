@@ -4,7 +4,7 @@
 
     if (isset($_POST['modifica_domeniu']))
     {
-        $sql          = "SELECT nume_domeniu, id_domeniu FROM domenii WHERE id_domeniu=" . $_POST['id_domeniu'];
+        $sql          = "SELECT nume_domeniu, id_domeniu FROM domenii WHERE id_domeniu=". $_POST['id_domeniu'];
         $resursa      = mysqli_query($db, $sql);
         $nume_domeniu = mysqli_fetch_assoc($resursa)['nume_domeniu'];
 
@@ -13,7 +13,7 @@
         <form action="process_modify_delete.php" method="post">
 
             <input type="text" name="nume_domeniu" value="<?= $nume_domeniu ?>">
-            <input type="hidden" name="id_domeniu" value="<?= $id_domeniu ?>">
+            <input type="hidden" name="id_domeniu" value="<?= $_POST['id_domeniu'] ?>">
             <input type="submit" name="modifica_domeniu" value="Modifica">
 
         </form>

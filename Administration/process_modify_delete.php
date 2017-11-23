@@ -2,7 +2,7 @@
 include ("authorization.php");
 include ("admin_top.php");
 
-if(isset($_POST['nume_domeniu']))
+if(isset($_POST['modifica_domeniu']))
 {
     if ($_POST['nume_domeniu'] == "")
     {
@@ -10,8 +10,9 @@ if(isset($_POST['nume_domeniu']))
     }
     else
     {
-        $sql = "UPDATE domenii SET nume_domeniu='".$_POST['nume_domeniu']."' WHERE id_domeniu=".$_POST['id_domeniu'];
+        $sql = "UPDATE domenii SET domenii.nume_domeniu='".$_POST['nume_domeniu']."' WHERE domenii.id_domeniu=".$_POST['id_domeniu'];
         mysqli_query($db, $sql);
+        print $_POST['nume_domeniu']."    ".$_POST['id_domeniu'];
         print "Numele domeniului a fost modificat!";
     }
 }//if

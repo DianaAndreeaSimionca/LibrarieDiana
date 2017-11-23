@@ -22,7 +22,8 @@
             }
         ?>
     </select>
-    <input type="submit" name="modifica_domeniu" value="Sterge">
+    <input type="submit" name="modifica_domeniu" value="Modifica">
+    <input type="submit" name="sterge_domeniu" value="Sterge">
 </form>
 
 
