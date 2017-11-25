@@ -7,7 +7,7 @@ include ("admin_top.php");
 <b>Comenzi inca neonorate</b>
 <?php
 $sqlTranzactii = "SELECT id_tranzactie, DATE_FORMAT(data_tranzactie, '%d-%m-%y') AS data_tranzactie, nume_cumparator, adresa_cumparator FROM tranzactii WHERE comanda_onorata=0";
-$resursaTranzactii = mysqli_query($db, $resursaTranzactii);
+$resursaTranzactii = mysqli_query($db, $sqlTranzactii);
 while ($rowTranzactie = mysqli_fetch_array($resursaTranzactii))
 {
 ?>
@@ -26,11 +26,12 @@ while ($rowTranzactie = mysqli_fetch_array($resursaTranzactii))
             <?php
             $sqlCarti = "SELECT titlu, nume_autor, pret, nr_buc FROM vanzari, carti, autori WHERE carti.id_carte=vanzari.id_carte AND carti.id_autor=autori.id_autor AND  id_tranzactie=".$rowTranzactie['id_tranzactie'];
             $resursaCarti = mysqli_query($db, $sqlCarti);
+            $totalGeneral = 0;
             while ($rowCarte = mysqli_fetch_array($resursaCarti))
             {
                 print '<tr><td>'.$rowCarte['titlu'].'de'.$rowCarte['nume_autor'].'</td><td align="right">'.$rowCarte['nr_buc'].'</td><td align="right">'.$rowCarte['pret'].'</td>';
                 $total = $rowCarte['pret'] * $rowCarte['nr_buc'];
-                print '<tr><td align="right">'.$total.'</td></tr>';
+                print '<td align="right">'.$total.'</td></tr>';
                 $totalGeneral = $totalGeneral + $total;
             }//while
             ?>
@@ -39,6 +40,7 @@ while ($rowTranzactie = mysqli_fetch_array($resursaTranzactii))
                 <td><?=$totalGeneral?> lei</td>
             </tr>
         </table>
+        <input type="hidden" name="id_tranzactie" value="<?php print $rowTranzactie['id_tranzactie'] ?>">
         <input type="submit" name="comanda_onorata" value="Comanda onorata">
         <input type="submit" name="anuleaza_comanda" value="Anuleaza comanda">
     </div>

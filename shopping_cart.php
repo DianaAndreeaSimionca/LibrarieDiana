@@ -2,7 +2,6 @@
     session_start();
     include("connect_db.php");
     include("page_top.php");
-    include("menu.php");
 
     if (isset($_GET['actiune']) && $_GET['actiune'] == "adauga")
     {
@@ -19,11 +18,13 @@
             $_SESSION['nr_buc'][$i] = $_POST['noulNrBuc'][$i];
         }
     }
+
+    include("menu.php");
 ?>
 
 <td valign="top">
     <h1>Cosul de cumparaturi</h1>
-    <form action="cos.php?actiune=modifica" method="post">
+    <form action="shopping_cart.php?actiune=modifica" method="post">
         <table border="1" cellpadding="4" cellspacing="0">
             <tr bgcolor="#F9F1E7">
                 <td><b>Numar bucati</b></td>
@@ -39,7 +40,7 @@
                     for ($i = 0; $i < count($_SESSION['id_carte']); $i++)
                     {
                         print '<tr><td><input type="text" name="noulNrBuc[' . $i . ']" size="1" value="' . $_SESSION['nr_buc'][$i] . '"></td>
-                           <td><b>' . $_SESSION['titlu'][$i] . '</b>de ' . $_SESSION['nume_autor'][$i] . '</td>
+                           <td><b>' . $_SESSION['titlu'][$i] . '</b> de ' . $_SESSION['nume_autor'][$i] . '</td>
                            <td align="right">' . $_SESSION['pret'][$i] . ' lei</td>
                            <td align="right">' . ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]) . ' lei</td>
                            </tr>';

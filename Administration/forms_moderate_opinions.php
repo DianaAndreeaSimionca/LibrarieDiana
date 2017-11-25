@@ -12,7 +12,7 @@ if (isset($_POST['modifica']))
 <b>Modifica acest comentariu</b>
 <form action="process_moderate_comments.php" method="post">
     Nume: <input type="text" name="nume_utilizator" value="<?=$row['nume_utilizator']?>">
-    Email: <input type="text" name="adresa_email" value="<?=$row['adresa_email']?>"><br><br>
+    Email: <input type="text" name="adresa_email" value="<?=$row['email_utilizator']?>"><br><br>
     Comentariu: <br><textarea name="comentariu" cols="45" rows="8"><?=$row['comentariu']?></textarea><br><br>
     <input type="hidden" name="id_comentariu" value="<?=$_POST['id_comentariu']?>">
     <input type="submit" name="modifica" value="Modifica">
@@ -41,7 +41,7 @@ Esti sigur ca vrei sa setezi comentariile din pagina precedenta ca fiind moderat
     <input type="submit" name="seteaza_moderate" value="Da!">
 </form>
 <?php
-}//if
+    }//if
 ?>
 </body>
 </html>
