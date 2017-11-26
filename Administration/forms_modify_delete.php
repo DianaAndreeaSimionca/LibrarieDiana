@@ -4,7 +4,7 @@
 
     if (isset($_POST['modifica_domeniu']))
     {
-        $sql          = "SELECT nume_domeniu, id_domeniu FROM domenii WHERE id_domeniu=". $_POST['id_domeniu'];
+        $sql          = "SELECT nume_domeniu, id_domeniu FROM domenii WHERE id_domeniu=" . $_POST['id_domeniu'];
         $resursa      = mysqli_query($db, $sql);
         $nume_domeniu = mysqli_fetch_assoc($resursa)['nume_domeniu'];
 
