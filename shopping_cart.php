@@ -1,8 +1,11 @@
 <?php
+
+    //start session
     session_start();
     include("connect_db.php");
     include("page_top.php");
 
+    //verifying that fields are not empty
     if (isset($_GET['actiune']) && $_GET['actiune'] == "adauga")
     {
         $_SESSION['id_carte'][]   = $_POST['id_carte'];
@@ -11,8 +14,11 @@
         $_SESSION['titlu'][]      = $_POST['titlu'];
         $_SESSION['nume_autor'][] = $_POST['nume_autor'];
     }
+
+    //verifying if the action is "modifica"
     if (isset($_GET['actiune']) && $_GET['actiune'] == "modifica")
     {
+        //iterate through books from the shopping cart and updates the book's number
         for ($i = 0; $i < count($_SESSION['id_carte']); $i++)
         {
             $_SESSION['nr_buc'][$i] = $_POST['noulNrBuc'][$i];
@@ -25,6 +31,7 @@
 <td valign="top">
     <h1>Cosul de cumparaturi</h1>
     <form action="shopping_cart.php?actiune=modifica" method="post">
+        <!--Declare a table using html tags in order to see the content of the shopping cart -->
         <table border="1" cellpadding="4" cellspacing="0">
             <tr bgcolor="#F9F1E7">
                 <td><b>Numar bucati</b></td>
@@ -33,10 +40,13 @@
                 <td><b>Total</b></td>
             </tr>
             <?php
+
+                //initialize the total amount of books with 0
                 $totalGeneral = 0;
 
                 if (isset($_SESSION['id_carte']) == true)
                 {
+                    //initialize
                     for ($i = 0; $i < count($_SESSION['id_carte']); $i++)
                     {
                         print '<tr><td><input type="text" name="noulNrBuc[' . $i . ']" size="1" value="' . $_SESSION['nr_buc'][$i] . '"></td>
