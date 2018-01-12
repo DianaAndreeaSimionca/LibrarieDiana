@@ -23,5 +23,6 @@
     $_SESSION['nume_admin']        = $_POST['nume'];
     $_SESSION['parola_encriptata'] = $parolaEncriptata;
     $_SESSION['key_admin']         = session_id();
+    header("location: admin.php");
 
 ?>
