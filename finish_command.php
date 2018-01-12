@@ -1,18 +1,22 @@
 <?php
+    // verify if name is not empty
     if ($_POST['nume'] == "")
     {
         print 'Trebuie sa completati numele! <a href="shopping_cart.php">Inapoi</a>';
         exit;
     }
 
+    // verify if adresa is not empty
     if ($_POST['adresa'] == "")
     {
         print 'Trebuie sa completati adresa! <a href="shopping_cart.php">Inapoi</a>';
         exit;
     }
 
+    // start the session
     session_start();
 
+    // verify if at least one book exist in the shopping cart
     $nrCarti = array_sum($_SESSION['nr_buc']);
     if ($nrCarti == 0)
     {
@@ -20,13 +24,16 @@
         exit;
     }
 
+    // connect to database
     include("connect_db.php");
 
+    // record the transaction in the database
     $sqlTranzactie     = "INSERT INTO tranzactii (nume_cumparator, adresa_cumparator) VALUES('" . $_POST['nume'] . "','" . $_POST['adresa'] . "')";
     $resursaTranzactie = mysqli_query($db, $sqlTranzactie);
 
     $id_tranzactie = mysqli_insert_id($db);
 
+    // record the number of book
     for ($i = 0; $i < count($_SESSION['id_carte']); $i++)
     {
         if ($_SESSION['nr_buc'][$i] > 0)
@@ -37,6 +44,8 @@
         }
     }
 
+    // compose a mail to the owner of the site
+    // which contain the order info
     $emailDestinatr = "simionca.andreea.diana@gmail.com";
 
     $subiect = "O noua comanda!";
@@ -60,10 +69,13 @@
     $mesaj .= "</table>";
     $mesaj .= "Total: <b>" . $totalGeneral . "</b>";
 
+    // declare the header of yahoo mail
     $headers = "MIME-Version: 1.0\r\nContent-type: text/html; charset=iso-8859-2\r\n";
 
+    // send the mail
     mail($emailDestinatr, $subiect, $mesaj, $headers);
 
+    // clear the session and distroy it
     session_unset();
     session_destroy();
 
@@ -71,6 +83,7 @@
     include("menu.php");
 ?>
 
+    <!-- present a message to confirm the order -->
     <td valign="top">
         <h1>Multumim!</h1>
         Va multumim ca ati cumparat de la noi! Veti primi comanda solicitata in cel mai scurt timp.

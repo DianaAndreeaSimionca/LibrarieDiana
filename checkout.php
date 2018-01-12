@@ -43,6 +43,7 @@
             ?>
         </table>
         <h1>Detalii</h1>
+        <!-- make a form if user place the checkout -->
         <form action="finish_command.php" method="post">
             <table>
                 <tr>

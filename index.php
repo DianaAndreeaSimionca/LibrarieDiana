@@ -1,4 +1,6 @@
 <?php
+
+    //start session
     session_start();
     include("connect_db.php");
     include("page_top.php");
@@ -12,6 +14,8 @@
         <tr>
 
             <?php
+
+                // gets the newest book added in the library
                 $sql     = "SELECT carti.id_carte, autori.id_autor, data, titlu, nume_autor, pret FROM carti, autori WHERE carti.id_autor=autori.id_autor ORDER BY data DESC LIMIT 0,3";
                 $resursa = mysqli_query($db, $sql);
                 while ($row = mysqli_fetch_array($resursa))
@@ -37,6 +41,8 @@
     <table cellpadding="5">
         <tr>
             <?php
+
+                // gets the most popular books of the library
                 $sqlVanzari     = "SELECT carti.id_carte, sum(nr_buc) AS bucatiVandute FROM vanzari, carti GROUP BY carti.id_carte ORDER BY bucatiVandute DESC LIMIT 0,3";
                 $resursaVanzari = mysqli_query($db, $sqlVanzari);
                 while ($rowVanzari = mysqli_fetch_array($resursaVanzari))

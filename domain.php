@@ -1,9 +1,11 @@
 <?php
+    // start the session
     session_start();
     include("connect_db.php");
     include("page_top.php");
     include("menu.php");
 
+    // get the current domain
     $numeDomeniu = $_GET['nume_domeniu'];
 ?>
 
@@ -14,6 +16,8 @@
         </b>
         <table cellpadding="5">
             <?php
+
+                // get all the book from coresponding domain
                 $sql     = "SELECT * FROM carti, autori, domenii WHERE carti.id_domeniu=domenii.id_domeniu AND carti.id_autor=autori.id_autor AND domenii.nume_domeniu='" . $numeDomeniu . "'";
                 $resursa = mysqli_query($db, $sql);
                 while ($row = mysqli_fetch_array($resursa))
@@ -23,6 +27,9 @@
                         <td align="center">
 
                             <?php
+
+                                // check if exist an image with name $id_carte.jpg
+                                // if doesn't exist replace with a div style with grey color in the background
                                 $adresaImagine = "coperta" . $row['id_carte'] . ".jpg";
                                 if (file_exists($adresaImagine))
                                 {
@@ -36,8 +43,10 @@
                         </td>
                         <td>
                             <b>
+                                <!-- make a link to that book -->
                                 <a href="carte.php?id_carte=<?php print $row['id_carte'] ?>"><?php print $row['titlu'] ?></a>
                             </b>
+                            <!-- print the author and the price of the book -->
                             <br><i>de <?php print $row['nume_autor'] ?></i>
                             <br>Pret: <?php print $row['pret'] ?> lei
                         </td>

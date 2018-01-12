@@ -1,7 +1,9 @@
 <?php
+    // include the authorization
     include("authorization.php");
     include("admin_top.php");
 
+    // verify if modifica is set
     if (isset($_POST['modifica']))
     {
         $sql     = "SELECT * FROM comentarii WHERE id_comentariu=" . $_POST['id_comentariu'];
@@ -19,6 +21,8 @@
         </form>
         <?php
     }//if
+
+    // verify if "sterge" is set
     if (isset($_POST['sterge']))
     {
         ?>

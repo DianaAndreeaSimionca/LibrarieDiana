@@ -24,6 +24,8 @@
             <td>
                 <select name="id_domeniu">
                     <?php
+
+                        // get all the fields from domains order by the domain name, ascending.
                         $sql     = "SELECT * FROM domenii ORDER BY nume_domeniu ASC";
                         $resursa = mysqli_query($db, $sql);
                         while ($row = mysqli_fetch_array($resursa))
@@ -39,6 +41,8 @@
             <td>
                 <select name="id_autor">
                     <?php
+
+                        // get all the fields from authors order by the author name, ascending.
                         $sql     = "SELECT * FROM autori ORDER BY nume_autor ASC";
                         $resursa = mysqli_query($db, $sql);
                         while ($row = mysqli_fetch_array($resursa))

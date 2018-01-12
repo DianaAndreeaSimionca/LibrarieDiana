@@ -3,6 +3,8 @@
         <b>Alege domeniul</b>
         <HR size="1">
         <?php
+
+            //orders the domain of books by "nume domeniu" (the domain's name)
             $sql     = "SELECT nume_domeniu FROM domenii ORDER BY nume_domeniu ASC";
             $resursa = mysqli_query($db, $sql);
             while ($row = mysqli_fetch_array($resursa))
@@ -26,9 +28,12 @@
         <b>Cos</b><br>
 
         <?php
+
+            //initialize the number of books and the total amount of books with 0
             $nrCarti      = 0;
             $totalValoare = 0;
 
+            // shows up the number of books in the shopping cart and sums up their price
             if (isset($_SESSION['titlu']) == true)
             {
                 for ($i = 0; $i < count($_SESSION['titlu']); $i++)

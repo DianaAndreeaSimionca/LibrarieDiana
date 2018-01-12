@@ -1,9 +1,11 @@
 <?php
+    // start the session
     session_start();
     include("connect_db.php");
     include("page_top.php");
     include("menu.php");
 
+    // get the keyword
     $cuvant = $_GET['cuvant'];
 ?>
 
@@ -12,9 +14,13 @@
     <p>Textul cautat: <b><?= $cuvant ?></b></p>
     <b>Autori: </b>
     <?php
+        // get id and name of the authors that contain the keyword
         $sql     = "SELECT id_autor, nume_autor FROM autori WHERE nume_autor LIKE '%" . $cuvant . "%'";
         $resursa = mysqli_query($db, $sql);
 
+        // verify if the rows number is equal to 0
+        // if it's equal than it will be shown no result
+        // else shows the searched author
         if (mysqli_num_rows($resursa) == 0)
         {
             print "<i>Nici un rezultat</i>";
@@ -30,9 +36,14 @@
     <b>Titluri:</b>
 
     <?php
+
+        // get id, title and description of the book searched with keyword
         $sql     = "SELECT id_carte, titlu, descriere FROM carti WHERE titlu LIKE '%" . $cuvant . "%'";
         $resursa = mysqli_query($db, $sql);
 
+        // verify if the rows number is equal to 0
+        // if it's equal than it will be shown no result
+        // else shows the searched book
         if (mysqli_num_rows($resursa) == 0)
         {
             print "<i>Nici un rezultat</i>";
