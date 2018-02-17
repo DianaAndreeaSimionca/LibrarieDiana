@@ -68,11 +68,11 @@
         <table>
             <tr>
                 <td width="200" align="center">
-                    <img src="cos.gif">
+                    <img src="goBack.ico" height="40px" width="40px">
                     <a href="index.php">Continua cumparaturile</a>
                 </td>
                 <td width="200" align="center">
-                    <img src="checkout.gif">
+                    <img src="goToHouse.png" height="40px" width="40px">
                     <a href="checkout.php">Mergi la casa</a>
                 </td>
             </tr>
