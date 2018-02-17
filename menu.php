@@ -1,6 +1,6 @@
 <td valign="top" width="20%">
     <div style="width: 96%; background-color:#F9F1E7; padding:4px; border: solid #632415 1px">
-        <b>Alege domeniul</b>
+        <b><?php echo gettext('Alege domeniul') ?></b>
         <HR size="1">
         <?php
 
@@ -18,7 +18,7 @@
     <br>
     <div style="width:96%; background-color:#F9F1E7; padding:4px; border:solid #632415 1px">
         <form action="search.php" method="GET">
-            <b>Cautare</b><br>
+            <b><?php echo gettext('Cautare') ?></b><br>
             <input type="text" name="cuvant" size="12" width="100%"><br>
             <input type="submit" value="Cauta" width="100%">
         </form>

@@ -8,55 +8,53 @@
 
     function setLanguage()
     {
-        if(isset($_GET['lang']))
+        $lang = "ro_RO";
+
+        if (isset($_GET['lang']))
         {
             // Set language to German
-            putenv('LC_ALL=de_DE');
-            setlocale(LC_ALL, 'de_DE');
+            // get the language from get method
 
-            bindtextdomain("librarie", "./locale");
-            textdomain("librarie");
+            $lang = $_GET['lang'];
         }
         else if(isset($_SESSION['lang']))
         {
             // Set language to German
-            putenv('LC_ALL=de_DE');
-            setlocale(LC_ALL, 'de_DE');
-
-            bindtextdomain("librarie", "./locale");
-            textdomain("librarie");
+            // get the language from the session
+            $lang = $_SESSION['lang'];
         }
         else
         {
-            $locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
             // Set language to German
-            putenv('LC_ALL=de_DE');
-            setlocale(LC_ALL, 'de_DE');
-
-            bindtextdomain("librarie", "./locale");
-            textdomain("librarie");
+            // get the language from the http response
+            $lang = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
         }
 
-        
-        $results = putenv("LC_ALL=en_US");
+        $lang = "en_US.UTF-8";
+
+        $results = putenv("LC_ALL=$lang");
         if (!$results)
         {
-            exit ('putenv failed');
+           echo 'Something is wrong with language(putenv)';
         }
 
-        $results = setlocale(LC_ALL, 'en_US');
+        $results = setlocale(LC_ALL, $lang);
         if (!$results)
         {
-            exit ('setlocale failed: locale function is not available on this platform, or the given local does not exist in this environment');
+            echo 'Something is wrong with language(setlocale)';
         }
 
         $results = bindtextdomain("librarie", __DIR__ . "/locale");
-        echo 'new text domain is set: ' . $results. "\n";
+        if (!$results)
+        {
+            echo 'Something is wrong with language(bindtextdomain)';
+        }
 
         $results = textdomain('librarie');
-        echo 'current message domain is set: ' . $results. "\n";
-
-        echo _('Buna');
+        if (!$results)
+        {
+            echo 'Something is wrong with language(textdomain)';
+        }
     }
 
 ?>
