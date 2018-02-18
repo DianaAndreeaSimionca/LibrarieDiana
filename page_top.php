@@ -31,6 +31,16 @@
 </head>
 
 <body bgcolor="#ffffff">
+
+<?php
+    //start session
+    session_start();
+
+    // include all library
+    include('localization.php');
+    include('connect_db.php');
+?>
+
 <img src="logo.png" width="100%">
 <table width="100%">
     <tr>

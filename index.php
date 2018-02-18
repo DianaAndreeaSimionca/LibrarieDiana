@@ -1,15 +1,11 @@
 <?php
-
-    //start session
-    session_start();
-    include("connect_db.php");
     include("page_top.php");
     include("menu.php");
 ?>
 
 <td valign="top">
-    <h1>Prima pagina</h1>
-    <b>Cele mai noi carti</b>
+    <h1><?php echo _('Prima pagina'); ?></h1>
+    <b><?php echo _('Cele mai noi carti'); ?></b>
     <table cellpadding="5">
         <tr>
 
@@ -29,15 +25,15 @@
                     }
                     else
                     {
-                        print '<div style="width: 75px; height: 100px; border: 1px black solid; background-color: #cccccc">Fara Imagine</div>';
+                        print '<div style="width: 75px; height: 100px; border: 1px black solid; background-color: #cccccc">'._("Fara imagine").'</div>';
                     }
-                    print '<b><a href="carte.php?id_carte=' . $row['id_carte'] . '">' . $row['titlu'] . '</a></b><br> de <i>' . $row['nume_autor'] . '</i><br>Pret: ' . $row['pret'] . ' lei</td>';
+                    print '<b><a href="carte.php?id_carte=' . $row['id_carte'] . '">' . $row['titlu'] . '</a></b><br>'._("de").' <i>' . $row['nume_autor'] . '</i><br>'._("Pret:").' ' . $row['pret'] . ' lei</td>';
                 }
             ?>
         </tr>
     </table>
     <hr>
-    <b>Cele mai populare carti</b>
+    <b><?php echo _('Cele mai populare carti'); ?></b>
     <table cellpadding="5">
         <tr>
             <?php
@@ -60,9 +56,9 @@
                         }
                         else
                         {
-                            print '<div style="width: 75px; height: 110px; border: 1px black solid; background-color:#cccccc">Fara imagine</div>';
+                            print '<div style="width: 75px; height: 110px; border: 1px black solid; background-color:#cccccc">'._("Fara imagine").'</div>';
                         }
-                        print '<b><a href="carte.php?id_carte=' . $rowVanzari['id_carte'] . '">' . $rowCarte['titlu'] . '</a></b><br> de <i>' . $rowCarte['nume_autor'] . '</i><br>Pret: ' . $rowCarte['pret'] . ' lei </td>';
+                        print '<b><a href="carte.php?id_carte=' . $rowVanzari['id_carte'] . '">' . $rowCarte['titlu'] . '</a></b><br> '._("de").' <i>' . $rowCarte['nume_autor'] . '</i><br>'._("Pret:").$rowCarte['pret']._("lei").'</td>';
                     }
                 }
             ?>

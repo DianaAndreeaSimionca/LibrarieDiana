@@ -29,15 +29,15 @@
 ?>
 
 <td valign="top">
-    <h1>Cosul de cumparaturi</h1>
+    <h1><?php echo _("Cosul de cumparaturi"); ?></h1>
     <form action="shopping_cart.php?actiune=modifica" method="post">
         <!--Declare a table using html tags in order to see the content of the shopping cart -->
         <table border="1" cellpadding="4" cellspacing="0">
             <tr bgcolor="#F9F1E7">
-                <td><b>Numar bucati</b></td>
-                <td><b>Carte</b></td>
-                <td><b>Pret</b></td>
-                <td><b>Total</b></td>
+                <td><b><?php echo _("Numar bucati"); ?></b></td>
+                <td><b><?php echo _("Carte"); ?></b></td>
+                <td><b><?php echo _("Pret"); ?></b></td>
+                <td><b><?php echo _("Total"); ?></b></td>
             </tr>
             <?php
 
@@ -57,23 +57,23 @@
                         $totalGeneral = $totalGeneral + ($_SESSION['pret'][$i] * $_SESSION['nr_buc'][$i]);
                     }
                 }
-                print '<tr><td align="right" colspan="3"><b>Total in cos</b></td>
+                print '<tr><td align="right" colspan="3"><b>'._("Total in cos").'</b></td>
                        <td align="right"><b>' . $totalGeneral . '</b> lei</td> 
                    </tr>';
             ?>
         </table>
-        <input type="submit" value="Modifica"><br><br>
-        Introduceti <b>0</b> pentru cartile ce doriti sa le scoateti din cos!
-        <h1>Continuare</h1>
+        <input type="submit" value="<?php echo _("Modifica"); ?>"><br><br>
+        <?php echo _("Introduceti 0 pentru cartile ce doriti sa le scoateti din cos!");?>
+        <h1><?php echo _("Continuare"); ?></h1>
         <table>
             <tr>
                 <td width="200" align="center">
                     <img src="goBack.ico" height="40px" width="40px">
-                    <a href="index.php">Continua cumparaturile</a>
+                    <a href="index.php"><?php echo _("Continua cumparaturile"); ?></a>
                 </td>
                 <td width="200" align="center">
                     <img src="goToHouse.png" height="40px" width="40px">
-                    <a href="checkout.php">Mergi la casa</a>
+                    <a href="checkout.php"><?php echo _("Mergi la casa"); ?></a>
                 </td>
             </tr>
         </table>

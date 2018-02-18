@@ -10,9 +10,9 @@
 ?>
 
 <td valign="top">
-    <h1>Rezultatele cautarii</h1>
-    <p>Textul cautat: <b><?= $cuvant ?></b></p>
-    <b>Autori: </b>
+    <h1><?php echo _("Rezultatele cautarii"); ?></h1>
+    <p><?php echo _("Textul cautat:"); ?> <b><?= $cuvant ?></b></p>
+    <b><?php echo _("Autori:"); ?> </b>
     <?php
         // get id and name of the authors that contain the keyword
         $sql     = "SELECT id_autor, nume_autor FROM autori WHERE nume_autor LIKE '%" . $cuvant . "%'";
@@ -33,7 +33,7 @@
         }
     ?>
     <br><br>
-    <b>Titluri:</b>
+    <b><?php echo _("Titluri:"); ?></b>
 
     <?php
 

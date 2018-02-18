@@ -2,14 +2,14 @@
     // verify if name is not empty
     if ($_POST['nume'] == "")
     {
-        print 'Trebuie sa completati numele! <a href="shopping_cart.php">Inapoi</a>';
+        print _("Trebuie sa completati numele!").'<a href="shopping_cart.php">'._("Inapoi").'</a>';
         exit;
     }
 
     // verify if adresa is not empty
     if ($_POST['adresa'] == "")
     {
-        print 'Trebuie sa completati adresa! <a href="shopping_cart.php">Inapoi</a>';
+        print _("Trebuie sa completati adresa!").' <a href="shopping_cart.php">'._("Inapoi").'</a>';
         exit;
     }
 
@@ -20,7 +20,7 @@
     $nrCarti = array_sum($_SESSION['nr_buc']);
     if ($nrCarti == 0)
     {
-        print 'Trebuie sa cumparati cel putin o carte! <a href="shopping_cart.php">Inapoi</a>';
+        print _("Trebuie sa cumparati cel putin o carte!").' <a href="shopping_cart.php">'._("Inapoi").'</a>';
         exit;
     }
 
@@ -46,7 +46,7 @@
 
     // compose a mail to the owner of the site
     // which contain the order info
-    $emailDestinatr = "simionca.andreea.diana@gmail.com";
+    $emailDestinatar = "simionca.andreea.diana@gmail.com";
 
     $subiect = "O noua comanda!";
 
@@ -73,7 +73,7 @@
     $headers = "MIME-Version: 1.0\r\nContent-type: text/html; charset=iso-8859-2\r\n";
 
     // send the mail
-    mail($emailDestinatr, $subiect, $mesaj, $headers);
+    mail($emailDestinatar, $subiect, $mesaj, $headers);
 
     // clear the session and distroy it
     session_unset();
@@ -85,8 +85,8 @@
 
     <!-- present a message to confirm the order -->
     <td valign="top">
-        <h1>Multumim!</h1>
-        Va multumim ca ati cumparat de la noi! Veti primi comanda solicitata in cel mai scurt timp.
+        <h1><?php echo _("Multumim!"); ?></h1>
+        <?php echo _("Va multumim ca ati cumparat de la noi! Veti primi comanda solicitata in cel mai scurt timp."); ?>
     </td>
 
 <?php

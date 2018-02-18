@@ -10,8 +10,8 @@
 ?>
 
     <td align="top">
-        <h1>Domeniu: <?php print $numeDomeniu ?></h1>
-        <b>Carti in domeniul
+        <h1><?php echo _("Domeniu:"); ?> <?php print $numeDomeniu ?></h1>
+        <b><?php echo _("Carti in domeniul"); ?>
             <u><i><?php print $numeDomeniu ?></i></u>:
         </b>
         <table cellpadding="5">
@@ -37,7 +37,7 @@
                                 }
                                 else
                                 {
-                                    print '<div style="width: 75px; height: 100px; border: 1px black solid; background-color: #cccccc">Fara imagine</div>';
+                                    print '<div style="width: 75px; height: 100px; border: 1px black solid; background-color: #cccccc">'._("Fara imagine").'</div>';
                                 }
                             ?>
                         </td>
@@ -47,8 +47,8 @@
                                 <a href="carte.php?id_carte=<?php print $row['id_carte'] ?>"><?php print $row['titlu'] ?></a>
                             </b>
                             <!-- print the author and the price of the book -->
-                            <br><i>de <?php print $row['nume_autor'] ?></i>
-                            <br>Pret: <?php print $row['pret'] ?> lei
+                            <br><i><?php echo _("de"); ?> <?php print $row['nume_autor'] ?></i>
+                            <br><?php echo _("Pret:"); ?> <?php print $row['pret'] ?> lei
                         </td>
                     </tr>
                     <?php

@@ -1,0 +1,265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Librarie\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-17 10:13+0200\n"
+"PO-Revision-Date: 2018-02-17 20:34+0200\n"
+"Last-Translator: Nasca Sergiu\n"
+"Language-Team: English (USA)\n"
+"Language: en-US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz\n"
+"X-Loco-Source-Locale: ro-RO\n"
+"X-Loco-Project-Id: 41943\n"
+"X-Loco-Api-Version: 1.0.18 20181210-1"
+
+msgid "Domeniu:"
+msgstr "Domain:"
+
+msgid "Carti in domeniul"
+msgstr "Books in the domain"
+
+#: loco:5a87e4bba39ff370528b4567
+msgid "Alege domeniul"
+msgstr "Choose domain"
+
+#: loco:5a87f310c430fee61d8b4567
+msgid "Proza"
+msgstr "Prose"
+
+#: loco:5a87f7a7c430fe751f8b4567
+msgid "Roman"
+msgstr "Novel"
+
+msgid "Poezie"
+msgstr "Poetry"
+
+#: loco:5a87f7d6c430fe641f8b4567
+msgid "Cautare"
+msgstr "Searching"
+
+#: loco:5a87f7fec430fec21e8b4568
+msgid "Cauta"
+msgstr "Search"
+
+#: loco:5a87f81ac430fe0d1f8b4568
+msgid "Cos"
+msgstr "Cart"
+
+#: loco:5a87fd34c430fe64208b4567
+msgid "Rezultatele cautarii"
+msgstr "Search results"
+
+#: loco:5a87fd9bc430fef81f8b4567
+msgid "Textul cautat:"
+msgstr "Searched text:"
+
+#: loco:5a87fdc4c430feb41f8b4567
+msgid "Autori:"
+msgstr "Authors:"
+
+#: loco:5a87fdd9c430fe64208b4569
+msgid "Mihai Eminescu"
+msgstr "Mihai Eminescu"
+
+#: loco:5a87fdf9c430fe0a208b4567
+msgid "Marin Preda"
+msgstr "Marin Preda"
+
+#: loco:5a87fe12c430febe1f8b4567
+msgid "Tudor Arghezi"
+msgstr "Tudor Arghezi"
+
+#: loco:5a87fe41c430fe64208b456b
+msgid "William Shakespeare"
+msgstr "William Shakespeare"
+
+#: loco:5a87fe9ac430febd1f8b4567
+msgid "Titluri:"
+msgstr "Titles:"
+
+#: loco:5a87ff86c430fef81f8b456a
+msgid "Luceafarul Descriere Luceafarul"
+msgstr "Lucifer Lucifer description"
+
+#: loco:5a8800c8c430fe18218b4567
+msgid "Morometii Descriere Morometii"
+msgstr "Morometii Morometii Description"
+
+#: loco:5a880173c430fe64208b456e
+msgid "Romeo si Julieta Descriere Romeo si Julieta"
+msgstr "Romeo and Juliet Description Romeo and Juliet"
+
+#: loco:5a880337c430fe00218b4568
+msgid "Cosul de cumparaturi"
+msgstr "Shopping cart"
+
+#: loco:5a880870c430fef3218b4567
+msgid "Numar bucati"
+msgstr "Number of pieces"
+
+#: loco:5a8808cbc430febb218b4569
+msgid "Carte"
+msgstr "Book"
+
+#: loco:5a8808f4c430fec8218b4567
+msgid "Pret"
+msgstr "Price"
+
+#: loco:5a880909c430fe07228b4567
+msgid "Total"
+msgstr "Total"
+
+#: loco:5a880925c430fe55228b4567
+msgid "Total in cos"
+msgstr "Total cart"
+
+#: loco:5a880944c430fe07228b4569
+msgid "Modifica"
+msgstr "Modify"
+
+#: loco:5a8809c0c430fec9218b4567
+msgid "Introduceti 0 pentru cartile ce doriti sa le scoateti din cos!"
+msgstr "Input 0 for the books you want to remove from cart!"
+
+#: loco:5a880a0ec430fec8218b4569
+msgid "Continuare"
+msgstr "Continue"
+
+#: loco:5a880a2fc430feb1228b4567
+msgid "Continua cumparaturile"
+msgstr "Continue shopping"
+
+#: loco:5a880a63c430feb1228b4569
+msgid "Mergi la casa"
+msgstr "Checkout"
+
+#: loco:5a880bb5c430fe09238b4567
+msgid "Cele mai noi carti"
+msgstr "Newest books"
+
+#: loco:5a880c78c430febb228b4568
+msgid "Fara imagine"
+msgstr "Without image"
+
+#: loco:5a880cb9c430fef1228b4567
+msgid "de"
+msgstr "by"
+
+#: loco:5a880cdec430fe08238b4567
+msgid "Pret:"
+msgstr "Price:"
+
+#: loco:5a880ceec430fedd228b4567
+msgid "lei"
+msgstr "lei"
+
+#: loco:5a880d06c430feb1228b456d
+msgid "Cele mai populare carti"
+msgstr "Most popular books"
+
+#: loco:5a880d87c430fef2228b4568
+msgid "Casa"
+msgstr "Checkout"
+
+#: loco:5a880dc2c430fee0228b4568
+msgid "Acestea sunt cartile comandate de dvs.:"
+msgstr "Books ordered by you:"
+
+#: loco:5a880e06c430feb1228b456f
+msgid "Nr. buc"
+msgstr "Pieces number"
+
+#: loco:5a880eabc430fee0228b456a
+msgid "Total de plata"
+msgstr "Total amount"
+
+#: loco:5a880ec3c430fe09238b4569
+msgid "Detalii"
+msgstr "Details"
+
+#: loco:5a8810dec430feec238b4567
+msgid "Numele:"
+msgstr "Name:"
+
+#: loco:5a8810f3c430fea3238b4567
+msgid "Adresa:"
+msgstr "Address:"
+
+#: loco:5a881122c430fef0238b4567
+msgid "Trimite!"
+msgstr "Send!"
+
+#: loco:5a881163c430fe96238b4567
+msgid "Multumim!"
+msgstr "Thank you!"
+
+#: loco:5a8811a4c430fea3238b4569
+msgid "Va multumim ca ati cumparat de la noi! Veti primi comanda solicitata in cel mai scurt timp."
+msgstr "Thank you for buying from us! Your order will processed as soon as possible."
+
+#: loco:5a8812cdc430fea3238b456b
+msgid "Cumpara acum!"
+msgstr "Buy now!"
+
+#: loco:5a8812edc430fea2238b4568
+msgid "Opiniile cititorilor"
+msgstr "Reader's opinion"
+
+#: loco:5a881313c430fea3238b456d
+msgid "Adauga opinia ta:"
+msgstr "Add your opinion:"
+
+#: loco:5a881330c430fe41248b4567
+msgid "Nume:"
+msgstr "Name:"
+
+#: loco:5a881347c430fee1238b4569
+msgid "Email:"
+msgstr "Email:"
+
+#: loco:5a881361c430fea3238b456f
+msgid "Comentariu:"
+msgstr "Comment:"
+
+#: loco:5a881378c430fe97238b456a
+msgid "Adauga"
+msgstr "Add"
+
+#: loco:5a886a3dc430fea9348b4568
+msgid "Click aici pentru a vedea continutul cosului"
+msgstr "Click here to see shopping cart's content"
+
+#: loco:5a887107c430fe47368b4568
+msgid "Prima pagina"
+msgstr "First page"
+
+#: loco:5a88717bc430fe25368b4568
+msgid "Aveti %d carti in cos, in valoare totala de %d lei."
+msgstr "You have %d books in the cart, in a total value of %d lei."
+
+msgid "Trebuie sa completezi toate campurile!"
+msgstr "You have to complete all fields!"
+
+msgid "Carti in domeniul"
+msgstr "Books in the domain"
+
+msgid "Trebuie sa completati numele"
+msgstr "You have to complete the name!"
+
+msgid "Trebuie sa completati adresa!"
+msgstr "You have to complete the address!"
+
+msgid "Inapoi"
+msgstr "Back"
+
+# There were errors exporting to PO file
+msgctxt "Loco"
+msgid "PO render errors"
+msgstr ""
+"Carte is a duplicate\n"
+"Pret-3 is a duplicate\n"
+"Total-2 is a duplicate"

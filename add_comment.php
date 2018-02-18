@@ -2,7 +2,7 @@
     // verify if all the textInput are not empty
     if ($_POST['nume_utilizator'] == "" || $_POST['adresa_email'] == "" || $_POST['comentariu'] == "")
     {
-        print "Trebuie sa completezi toate campurile!";
+        print _("Trebuie sa completezi toate campurile!");
         exit;
     }
 
